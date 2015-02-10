@@ -1,5 +1,11 @@
-<h1>Listing pins</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h1>Listing pins</h1>
+    </div> <!-- end panel title -->
+  </div> <!-- end panel heading -->
 
+<div class="panel-body">
 <table>
   <thead>
     <tr>
@@ -23,5 +29,9 @@
 </table>
 
 <br>
+</div> <!-- end panel body -->
+<div class="panel-footer">
+  <%= link_to 'New Pin', new_pin_path %>
+</div> <!-- end panel footer -->
+</div> <!-- end panel -->
 
-<%= link_to 'New Pin', new_pin_path %>
