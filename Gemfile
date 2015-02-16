@@ -21,6 +21,8 @@ gem 'devise', '~> 3.1.0.rc2' #~> means anything over 3.1.0 but less than 4 major
 
 gem 'paperclip'
 
+gem 'aws-sdk', '~> 1.20.0' 
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
