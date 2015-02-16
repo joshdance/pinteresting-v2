@@ -5,7 +5,7 @@ class PinsController < ApplicationController
   #before filter and before action are same thing. 
 
   def index
-    @pins = Pin.all
+    @pins = Pin.all #this is how we get the pins on the page
   end
 
   def show

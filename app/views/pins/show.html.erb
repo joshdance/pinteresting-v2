@@ -1,15 +1,26 @@
 <p id="notice"><%= notice %></p>
-
-<%= image_tag @pin.image.url (:medium) %>
-<br>
-<%= @pin.image %> <!-- just shows the url location -->
-
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
-
-<% if @pin.user == current_user %>
-	<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<% end %>
 <%= link_to 'Back', pins_path %>
+
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading center">
+				<%= image_tag @pin.image.url (:medium) %>
+			</div> <!-- end class panel heading -->
+			<div class="panel-body">
+				<p>
+				<%= @pin.description %>
+				<div class="username">
+					<p><%= @pin.user.email if @pin.user %></p>
+				</div>
+				</p>
+
+				<% if @pin.user == current_user %>
+				<%= link_to 'Edit', edit_pin_path(@pin) %>
+				<% end %>
+			</div><!--  end class panel body -->
+		</div> <!-- end div class panel -->
+	</div> <!-- end div class box -->
+</div> <!-- end div id pins -->
+
+
