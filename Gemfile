@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 gem 'jbuilder', '~> 1.2'
 
@@ -22,6 +23,7 @@ gem 'devise', '~> 3.1.0.rc2' #~> means anything over 3.1.0 but less than 4 major
 gem 'paperclip'
 
 gem 'aws-sdk', '~> 1.20.0' 
+gem 'masonry-rails', '0.2.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

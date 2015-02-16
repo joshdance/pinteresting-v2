@@ -18,3 +18,5 @@
 
 #Ignore key
 key
+
+/public/system/*

@@ -1,45 +1,20 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Listing pins</h1>
-    </div> <!-- end panel title -->
-  </div> <!-- end panel heading -->
-
-<div class="panel-body">
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th>User</th>
-      <th>show</th>
-      <th>edit</th>
-      <th>destroy</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td><%= image_tag pin.image.url (:medium) %></td>
-        <td><%= link_to pin.description, pin %></td>
-        <td>email</td>
-        <td><%= link_to 'Show', pin %></td>
-        <% if pin.user == current_user %>
-          <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-          <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %> <!-- end block pins each -->
-  </tbody>
-</table>
-
-<br>
-</div> <!-- end panel body -->
 <% if user_signed_in? %>
-<div class="panel-footer">
-  <%= link_to 'New Pin', new_pin_path %>
-</div> <!-- end panel footer -->
+  <!-- signed in stuff -->
 <% end %>
-</div> <!-- end panel -->
 
+<div id="pins" class="transitions-enabled">
+  <% @pins.each do |pin| %> <!-- @pins comes from the controller, pin is only inside the block -->
+    <div class="box panel panel-default">
+      <%= image_tag pin.image.url (:medium) %>
+      <div class="panel-body">
+        <%= link_to pin.description, pin %>
+        <%= pin.user.email if pin.user %>
+        <%= link_to 'Show', pin %>
+        <% if pin.user == current_user %>
+          <%= link_to 'Edit', edit_pin_path(pin) %>
+          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div> <!-- end panel body -->
+    </div> <!-- end class=box for each pin -->
+  <% end %>
+</div> <!-- end id=pins div -->
