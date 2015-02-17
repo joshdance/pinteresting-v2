@@ -5,6 +5,8 @@ class Pin < ActiveRecord::Base
 		:medium => "300x300>", :thumb => "100x100>" 
 	}
 
+	validates :image, presence: true
+  	validates :description, presence: true
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
 end

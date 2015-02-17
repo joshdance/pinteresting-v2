@@ -11,7 +11,7 @@
       <div class="panel-body">
         <%= link_to pin.description, pin %>
         <div class="username">
-          <%= pin.user.email if pin.user %>
+          <%= pin.user.name if pin.user %>
         </div> <!-- end class username -->
         <% if pin.user == current_user %>
           <div class="actions">
